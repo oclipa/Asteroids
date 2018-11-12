@@ -35,7 +35,7 @@ public class Ship : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float rotation = Input.GetAxis("Rotate");
-        if (rotation != 0) // if we have rotation specified by the user
+        if (rotation != 0f) // if we have rotation specified by the user
         {
             // get the amount of rotation amount
             float rotationAmountInDegrees = RotateDegreesPerSecond * Time.deltaTime;
@@ -60,7 +60,7 @@ public class Ship : MonoBehaviour {
             Bullet bullet = Instantiate<Bullet>(prefabBullet, transform.position, Quaternion.identity);
             bullet.ApplyForce(thrustDirection);
         }
-	}
+    }
 
     /// <summary>
     /// Applies a force to the ship's Rigidbody2D every fixed framerate frame
